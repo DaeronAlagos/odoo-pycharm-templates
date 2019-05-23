@@ -86,7 +86,8 @@
       <option name="Python" value="true" />
     </context>
   </template>
-  <template name="odoo_field_char" value="new_field = fields.Char(string=&quot;&quot;, required=False, )" description="Add new field of type Char" toReformat="false" toShortenFQNames="true">
+  <template name="odoo_field_char" value="$FIELD_NAME$ = fields.Char(string=&quot;$STRING&quot;, $END$)" description="Add new field of type Char" toReformat="false" toShortenFQNames="true">
+    <variable name="FIELD_NAME" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="Python" value="true" />
     </context>
@@ -96,7 +97,10 @@
       <option name="Python" value="true" />
     </context>
   </template>
-  <template name="odoo_field_many2one" value="new_field_id = fields.Many2one(comodel_name=&quot;&quot;, string=&quot;&quot;, required=False, )" description="Add new field of type Many2one" toReformat="false" toShortenFQNames="true">
+  <template name="odoo_field_many2one" value="$FIELD_NAME$ = fields.Many2one(comodel_name=&quot;$COMODEL_NAME$&quot;, string=&quot;$STRING$&quot;, $END$)" description="Add new field of type Many2one" toReformat="false" toShortenFQNames="true">
+    <variable name="FIELD_NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="COMODEL_NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="STRING" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="Python" value="true" />
     </context>
@@ -106,7 +110,9 @@
       <option name="Python" value="true" />
     </context>
   </template>
-  <template name="odoo_field_boolean" value="is_new_field = fields.Boolean(string=&quot;&quot;,  )" description="Add new field of type Boolean" toReformat="false" toShortenFQNames="true">
+  <template name="odoo_field_boolean" value="$FIELD_NAME$ = fields.Boolean(string=&quot;$STRING$&quot;, $END$)" description="Add new field of type Boolean" toReformat="false" toShortenFQNames="true">
+    <variable name="FIELD_NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="STRING" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="Python" value="true" />
     </context>
@@ -121,12 +127,16 @@
       <option name="Python" value="true" />
     </context>
   </template>
-  <template name="odoo_field_date" value="new_field = fields.Date(string=&quot;&quot;, required=False, )" description="Add new field of type Date" toReformat="false" toShortenFQNames="true">
+  <template name="odoo_field_date" value="$FIELD_NAME$ = fields.Date(string=&quot;$STRING$&quot;, $END$)" description="Add new field of type Date" toReformat="false" toShortenFQNames="true">
+    <variable name="FIELD_NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="STRING" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="Python" value="true" />
     </context>
   </template>
-  <template name="odoo_field_datetime" value="new_field = fields.Datetime(string=&quot;&quot;, required=False, )" description="Add new field of type DateTime" toReformat="false" toShortenFQNames="true">
+  <template name="odoo_field_datetime" value="$FIELD_NAME$ = fields.Datetime(string=&quot;$STRING$&quot;, $END$)" description="Add new field of type DateTime" toReformat="false" toShortenFQNames="true">
+    <variable name="FIELD_NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="STRING" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="Python" value="true" />
     </context>
@@ -184,7 +194,9 @@
       <option name="XML" value="true" />
     </context>
   </template>
-  <template name="odoo_field_binary" value="new_field = fields.Binary(string=&quot;&quot;,  )" description="Add new field of type Binary" toReformat="false" toShortenFQNames="true">
+  <template name="odoo_field_binary" value="$FIELD_NAME$ = fields.Binary(string=&quot;$STRING$&quot;, $END$)" description="Add new field of type Binary" toReformat="false" toShortenFQNames="true">
+    <variable name="FIELD_NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="STRING" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="Python" value="true" />
     </context>
@@ -313,7 +325,7 @@
       <option name="XML" value="true" />
     </context>
   </template>
-  <template name="odoo_field" value="&lt;field name=&quot;name&quot;/&gt;" description="Add commun field on view" toReformat="true" toShortenFQNames="true">
+  <template name="odoo_field" value="&lt;field name=&quot;name&quot;/&gt;" description="Add common field on view" toReformat="true" toShortenFQNames="true">
     <context>
       <option name="XML" value="true" />
     </context>
