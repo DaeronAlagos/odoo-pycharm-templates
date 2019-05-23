@@ -68,7 +68,10 @@
     </context>
   </template>
   <template name="odoo_nested_group" value="&lt;group string=&quot;&quot;&gt;&#10;    &lt;group&gt;&#10;        &lt;field name=&quot;&quot;/&gt;&#10;    &lt;/group&gt;&#10;    &lt;group&gt;&#10;        &lt;field name=&quot;&quot;/&gt;&#10;    &lt;/group&gt;&#10;&lt;/group&gt;" description="Create Nested Groups" toReformat="false" toShortenFQNames="true" />
-  <template name="odoo_domain" value="domain=&quot;[('', '=', ), ]&quot;" description="Add domain to your field" toReformat="false" toShortenFQNames="true">
+  <template name="odoo_domain" value="domain=&quot;[('$LEFT_LEAF$', '$OPERAND$', $RIGHT_LEAF$), $END$]&quot;" description="Add domain to your field" toReformat="false" toShortenFQNames="true">
+    <variable name="LEFT_LEAF" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="OPERAND" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="RIGHT_LEAF" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="XML" value="true" />
     </context>
