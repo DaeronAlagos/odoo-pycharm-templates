@@ -1,10 +1,18 @@
 <templateSet group="Odoo">
-  <template name="odoo_form" value="&lt;record id=&quot;&quot; model=&quot;ir.ui.view&quot;&gt;&#10;    &lt;field name=&quot;name&quot;&gt;&lt;/field&gt;&#10;    &lt;field name=&quot;model&quot;&gt;&lt;/field&gt;&#10;    &lt;field name=&quot;arch&quot; type=&quot;xml&quot;&gt;&#10;        &lt;form string=&quot;&quot;&gt;&#10;            &lt;sheet&gt;&#10;                &lt;group&gt;&#10;                    &lt;field name=&quot;name&quot;/&gt;&#10;                &lt;/group&gt;&#10;            &lt;/sheet&gt;&#10;        &lt;/form&gt;&#10;    &lt;/field&gt;&#10;&lt;/record&gt;" description="Create Form View" toReformat="false" toShortenFQNames="true">
+  <template name="odoo_form" value="&lt;record id=&quot;$RECORD_ID$&quot; model=&quot;ir.ui.view&quot;&gt;&#10;    &lt;field name=&quot;name&quot;&gt;$RECORD_NAME$&lt;/field&gt;&#10;    &lt;field name=&quot;model&quot;&gt;$MODEL$&lt;/field&gt;&#10;    &lt;field name=&quot;arch&quot; type=&quot;xml&quot;&gt;&#10;        &lt;form string=&quot;$STRING$&quot;&gt;&#10;            &lt;sheet&gt;&#10;                &lt;group&gt;&#10;                    &lt;field name=&quot;$END$&quot;/&gt;&#10;                &lt;/group&gt;&#10;            &lt;/sheet&gt;&#10;        &lt;/form&gt;&#10;    &lt;/field&gt;&#10;&lt;/record&gt;" description="Create Form View" toReformat="false" toShortenFQNames="true">
+    <variable name="RECORD_ID" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="RECORD_NAME" expression="groovyScript(&quot;_1.tr('_', '.')&quot;, RECORD_ID)" defaultValue="" alwaysStopAt="true" />
+    <variable name="MODEL" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="STRING" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="XML" value="true" />
     </context>
   </template>
-  <template name="odoo_tree" value="&lt;record id=&quot;&quot; model=&quot;ir.ui.view&quot;&gt;&#10;    &lt;field name=&quot;name&quot;&gt;&lt;/field&gt;&#10;    &lt;field name=&quot;model&quot;&gt;&lt;/field&gt;&#10;    &lt;field name=&quot;arch&quot; type=&quot;xml&quot;&gt;&#10;        &lt;tree string=&quot;&quot;&gt;&#10;            &lt;field name=&quot;name&quot;/&gt;&#10;        &lt;/tree&gt;&#10;    &lt;/field&gt;&#10;&lt;/record&gt;" description="Create Tree View" toReformat="false" toShortenFQNames="true">
+  <template name="odoo_tree" value="&lt;record id=&quot;$RECORD_ID$&quot; model=&quot;ir.ui.view&quot;&gt;&#10;    &lt;field name=&quot;name&quot;&gt;$NAME$&lt;/field&gt;&#10;    &lt;field name=&quot;model&quot;&gt;$MODEL$&lt;/field&gt;&#10;    &lt;field name=&quot;arch&quot; type=&quot;xml&quot;&gt;&#10;        &lt;tree string=&quot;$STRING$&quot;&gt;&#10;            &lt;field name=&quot;$END$&quot;/&gt;&#10;        &lt;/tree&gt;&#10;    &lt;/field&gt;&#10;&lt;/record&gt;" description="Create Tree View" toReformat="false" toShortenFQNames="true">
+    <variable name="RECORD_ID" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="NAME" expression="groovyScript(&quot;_1.tr('_', '.')&quot;, RECORD_ID)" defaultValue="" alwaysStopAt="true" />
+    <variable name="MODEL" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="STRING" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="XML" value="true" />
     </context>
@@ -14,7 +22,13 @@
       <option name="XML" value="true" />
     </context>
   </template>
-  <template name="odoo_form_inherit" value="&lt;!-- Inherit Form View to Modify it --&gt;&#10;&lt;record id=&quot;&quot; model=&quot;ir.ui.view&quot;&gt;&#10;    &lt;field name=&quot;name&quot;&gt;&lt;/field&gt;&#10;    &lt;field name=&quot;model&quot;&gt;&lt;/field&gt;&#10;    &lt;field name=&quot;inherit_id&quot; ref=&quot;&quot;/&gt;&#10;    &lt;field name=&quot;arch&quot; type=&quot;xml&quot;&gt;&#10;        &#10;        &lt;xpath expr=&quot;//field[@name='name']&quot; position=&quot;&quot;&gt;&#10;            &lt;!-- Add your fields or attributes here --&gt;&#10;        &lt;/xpath&gt;&#10;        &#10;    &lt;/field&gt;&#10;&lt;/record&gt;" description="Inherit Existing Form View" toReformat="false" toShortenFQNames="true">
+  <template name="odoo_form_inherit" value="&lt;record id=&quot;$RECORD_ID$&quot; model=&quot;ir.ui.view&quot;&gt;&#10;    &lt;field name=&quot;name&quot;&gt;$RECORD_NAME$&lt;/field&gt;&#10;    &lt;field name=&quot;model&quot;&gt;$MODEL$&lt;/field&gt;&#10;    &lt;field name=&quot;inherit_id&quot; ref=&quot;$INHERIT$&quot;/&gt;&#10;    &lt;field name=&quot;arch&quot; type=&quot;xml&quot;&gt;&#10;        &#10;        &lt;xpath expr=&quot;//field[@name='$NAME$']&quot; position=&quot;$POSITION$&quot;&gt;&#10;            $END$&#10;        &lt;/xpath&gt;&#10;        &#10;    &lt;/field&gt;&#10;&lt;/record&gt;" description="Inherit Existing Form View" toReformat="false" toShortenFQNames="true">
+    <variable name="RECORD_ID" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="RECORD_NAME" expression="groovyScript(&quot;_1.tr('_', '.')&quot;, RECORD_ID)" defaultValue="" alwaysStopAt="true" />
+    <variable name="MODEL" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="INHERIT" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="POSITION" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="XML" value="true" />
     </context>
@@ -24,7 +38,11 @@
       <option name="XML" value="true" />
     </context>
   </template>
-  <template name="odoo_view_action" value="&lt;record id=&quot;&quot; model=&quot;ir.actions.act_window&quot;&gt;&#10;    &lt;field name=&quot;name&quot;&gt;&lt;/field&gt;&#10;    &lt;field name=&quot;type&quot;&gt;ir.actions.act_window&lt;/field&gt;&#10;    &lt;field name=&quot;res_model&quot;&gt;&lt;/field&gt;&#10;    &lt;field name=&quot;view_mode&quot;&gt;tree,form&lt;/field&gt;&#10;    &lt;field name=&quot;help&quot; type=&quot;html&quot;&gt;&#10;      &lt;p class=&quot;oe_view_nocontent_create&quot;&gt;&#10;        &lt;!-- Add Text Here --&gt;&#10;      &lt;/p&gt;&lt;p&gt;&#10;        &lt;!-- More details about what a user can do with this object will be OK --&gt; &#10;      &lt;/p&gt;&#10;    &lt;/field&gt;&#10;&lt;/record&gt;" description="Create new Action" toReformat="false" toShortenFQNames="true">
+  <template name="odoo_view_action" value="&lt;record id=&quot;$RECORD_ID$&quot; model=&quot;ir.actions.act_window&quot;&gt;&#10;    &lt;field name=&quot;name&quot;&gt;$NAME$&lt;/field&gt;&#10;    &lt;field name=&quot;type&quot;&gt;ir.actions.act_window&lt;/field&gt;&#10;    &lt;field name=&quot;res_model&quot;&gt;$MODEL$&lt;/field&gt;&#10;    &lt;field name=&quot;view_mode&quot;&gt;tree,form&lt;/field&gt;&#10;    &lt;field name=&quot;help&quot; type=&quot;html&quot;&gt;&#10;      &lt;p class=&quot;oe_view_nocontent_create&quot;&gt;&#10;        $OVERVIEW$&#10;      &lt;/p&gt;&lt;p&gt;&#10;        $END$&#10;      &lt;/p&gt;&#10;    &lt;/field&gt;&#10;&lt;/record&gt;" description="Create new Action" toReformat="false" toShortenFQNames="true">
+    <variable name="RECORD_ID" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="MODEL" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="OVERVIEW" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="XML" value="true" />
     </context>
@@ -39,7 +57,12 @@
       <option name="XML" value="true" />
     </context>
   </template>
-  <template name="odoo_menuitem_action" value="&lt;!-- This Menu Item must have a parent and an action --&gt;&#10;&lt;menuitem id=&quot;UNIQUE_ID_categ&quot; name=&quot;&quot; parent=&quot;&quot; action=&quot;&quot; sequence=&quot;&quot;/&gt;" description="Create New Menu Item for Actions" toReformat="false" toShortenFQNames="true">
+  <template name="odoo_menuitem_action" value="&lt;!-- This Menu Item must have a parent and an action --&gt;&#10;&lt;menuitem&#10;    id=&quot;$UNIQUE_ID$&quot;&#10;    name=&quot;$NAME$&quot;&#10;    parent=&quot;$PARENT$&quot;&#10;    action=&quot;$ACTION$&quot;&#10;    sequence=&quot;$SEQUENCE$&quot;&#10;/&gt;" description="Create New Menu Item for Actions" toReformat="false" toShortenFQNames="true">
+    <variable name="UNIQUE_ID" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="PARENT" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="ACTION" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="SEQUENCE" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="XML" value="true" />
     </context>
@@ -115,7 +138,9 @@
       <option name="Python" value="true" />
     </context>
   </template>
-  <template name="odoo_object_inherit" value="class NewModule(models.Model):&#10;    _name = 'new_module.new_module'&#10;    _inherit = 'new_module.new_module'&#10;&#10;    name = fields.Char()&#10;" description="Inherit/Extend Existing Odoo Object" toReformat="false" toShortenFQNames="true">
+  <template name="odoo_object_inherit" value="class $CLASS_NAME$(models.Model):&#10;    _inherit = '$MODEL_NAME$'&#10;&#10;    $END$&#10;" description="Inherit/Extend Existing Odoo Object" toReformat="false" toShortenFQNames="true">
+    <variable name="MODEL_NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="CLASS_NAME" expression="capitalize(camelCase(groovyScript(&quot;_1.tr('.', '_')&quot;, MODEL_NAME)))" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="Python" value="true" />
     </context>
@@ -130,7 +155,18 @@
       <option name="XML" value="true" />
     </context>
   </template>
-  <template name="odoo_security_rule" value="&lt;record id=&quot;&quot; model=&quot;ir.rule&quot;&gt;&#10;    &lt;field name=&quot;name&quot;&gt;&lt;/field&gt;&#10;    &lt;field ref=&quot;model_name_of_model&quot; name=&quot;model_id&quot;/&gt;&#10;    &lt;field name=&quot;domain_force&quot;&gt;[('', '', )]&lt;/field&gt;&#10;    &lt;field name=&quot;perm_write&quot; eval=&quot;1&quot;/&gt;&#10;    &lt;field name=&quot;perm_create&quot; eval=&quot;1&quot;/&gt;&#10;    &lt;field name=&quot;perm_read&quot; eval=&quot;1&quot;/&gt;&#10;    &lt;field name=&quot;perm_unlink&quot; eval=&quot;1&quot;/&gt;&#10;    &lt;!-- You can attach this rule to a specific group, Or make it Global --&gt;&#10;    &lt;field name=&quot;groups&quot; eval=&quot;[(4, ref('group_id'))]&quot;/&gt;&#10;    &lt;!--&lt;field name=&quot;global&quot; eval=&quot;1&quot;/&gt; --&gt;&#10;&lt;/record&gt;" description="Create new Security Rules" toReformat="false" toShortenFQNames="true">
+  <template name="odoo_security_rule" value="&lt;record id=&quot;$RECORD_ID$&quot; model=&quot;ir.rule&quot;&gt;&#10;    &lt;field name=&quot;name&quot;&gt;$NAME$&lt;/field&gt;&#10;    &lt;field name=&quot;model_id&quot; ref=&quot;model_$MODEL$&quot;/&gt;&#10;    &lt;field name=&quot;domain_force&quot;&gt;[('$LEFT_LEAF$', '$OPERATOR$', $RIGHT_LEFT$)]&lt;/field&gt;&#10;    &lt;field name=&quot;perm_read&quot; eval=&quot;$READ_PERM$&quot;/&gt;&#10;    &lt;field name=&quot;perm_write&quot; eval=&quot;$WRITE_PERM$&quot;/&gt;&#10;    &lt;field name=&quot;perm_create&quot; eval=&quot;$CREATE_PERM$&quot;/&gt;&#10;    &lt;field name=&quot;perm_unlink&quot; eval=&quot;$DELETE_PERM$&quot;/&gt;&#10;    &lt;field name=&quot;groups&quot; eval=&quot;[(4, ref('$GROUP_ID$'))]&quot;/&gt;&#10;&lt;/record&gt;" description="Create new Security Rules" toReformat="false" toShortenFQNames="true">
+    <variable name="RECORD_ID" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="MODEL" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="LEFT_LEAF" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="OPERATOR" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="RIGHT_LEFT" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="READ_PERM" expression="" defaultValue="1" alwaysStopAt="true" />
+    <variable name="WRITE_PERM" expression="" defaultValue="1" alwaysStopAt="true" />
+    <variable name="CREATE_PERM" expression="" defaultValue="0" alwaysStopAt="true" />
+    <variable name="DELETE_PERM" expression="" defaultValue="0" alwaysStopAt="true" />
+    <variable name="GROUP_ID" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="XML" value="true" />
     </context>
@@ -205,12 +241,17 @@
       <option name="XML_TEXT" value="true" />
     </context>
   </template>
-  <template name="odoo_search" value="&lt;record id=&quot;&quot; model=&quot;ir.ui.view&quot;&gt;&#10;   &lt;field name=&quot;name&quot;&gt;&lt;/field&gt;&#10;   &lt;field name=&quot;model&quot;&gt;&lt;/field&gt;&#10;    &lt;field name=&quot;arch&quot; type=&quot;xml&quot;&gt;&#10;        &lt;search string=&quot;&quot;&gt;&#10;   		 &lt;field name=&quot;name&quot; string=&quot;string&quot; domain=&quot;[()]&quot;/&gt;&#10;    &lt;/search&gt;&#10;   &lt;/field&gt;&#10;&lt;/record&gt;" description="Create Search View" toReformat="false" toShortenFQNames="true">
+  <template name="odoo_search" value="&lt;record id=&quot;$ID$&quot; model=&quot;ir.ui.view&quot;&gt;&#10;   &lt;field name=&quot;name&quot;&gt;$MODEL$.search&lt;/field&gt;&#10;   &lt;field name=&quot;model&quot;&gt;$MODEL$&lt;/field&gt;&#10;    &lt;field name=&quot;arch&quot; type=&quot;xml&quot;&gt;&#10;        &lt;search string=&quot;$SEARCH_STRING$&quot;&gt;&#10;      &lt;field name=&quot;name&quot; string=&quot;$FILTER_STRING$&quot; domain=&quot;[($DOMAIN$)]&quot;/&gt;&#10;    &lt;/search&gt;&#10;   &lt;/field&gt;&#10;&lt;/record&gt;&#10;&#10;$END$" description="Create Search View" toReformat="false" toShortenFQNames="true">
+    <variable name="ID" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="MODEL" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="SEARCH_STRING" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="FILTER_STRING" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="DOMAIN" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="XML" value="true" />
     </context>
   </template>
-  <template name="odoo_kanban" value="&lt;record id=&quot;&quot; model=&quot;ir.ui.view&quot;&gt;&#10;	&lt;field name=&quot;name&quot;&gt;&lt;/field&gt;&#10;	 &lt;field name=&quot;model&quot;&gt;&lt;/field&gt;&#10;	&lt;field name=&quot;arch&quot; type=&quot;xml&quot;&gt;&#10;	   &lt;kanban&gt;&#10;			&lt;field name=&quot;name&quot;/&gt;&#10;	&lt;templates&gt;&#10;	&lt;t t-name=&quot;kanban-box&quot;&gt;&#10;	&lt;/t&gt;&#10;	&lt;/templates&gt;&#10; &lt;/kanban&gt;&#10; &lt;/field&gt;&#10;&lt;/record&gt;"	description="Create Kanban View"	toReformat="false"	toShortenFQNames="true">
+  <template name="odoo_kanban" value="&lt;record id=&quot;&quot; model=&quot;ir.ui.view&quot;&gt;&#10; &lt;field name=&quot;name&quot;&gt;&lt;/field&gt;&#10;  &lt;field name=&quot;model&quot;&gt;&lt;/field&gt;&#10; &lt;field name=&quot;arch&quot; type=&quot;xml&quot;&gt;&#10;    &lt;kanban&gt;&#10;   &lt;field name=&quot;name&quot;/&gt;&#10; &lt;templates&gt;&#10; &lt;t t-name=&quot;kanban-box&quot;&gt;&#10; &lt;/t&gt;&#10; &lt;/templates&gt;&#10; &lt;/kanban&gt;&#10; &lt;/field&gt;&#10;&lt;/record&gt;" description="Create Kanban View" toReformat="false" toShortenFQNames="true">
     <context>
       <option name="XML" value="true" />
     </context>
@@ -230,7 +271,11 @@
       <option name="Python" value="true" />
     </context>
   </template>
-  <template name="odoo_xpath" value="&lt;xpath expr=&quot;//field[@name='name']&quot; position=&quot;&quot;&gt;&#10;    &lt;!-- Add your fields or attributes here --&gt;&#10;&lt;/xpath&gt;" description="Add the structure of xpath" toReformat="true" toShortenFQNames="true">
+  <template name="odoo_xpath" value="&lt;xpath expr=&quot;//$ELEMENT$[@$ATTR_NAME$='$ATTR_VALUE$']&quot; position=&quot;$POSITION$&quot;&gt;&#10;    $END$&#10;&lt;/xpath&gt;" description="Add the structure of xpath" toReformat="true" toShortenFQNames="true">
+    <variable name="ELEMENT" expression="" defaultValue="field" alwaysStopAt="true" />
+    <variable name="ATTR_NAME" expression="" defaultValue="name" alwaysStopAt="true" />
+    <variable name="ATTR_VALUE" expression="" defaultValue="name" alwaysStopAt="true" />
+    <variable name="POSITION" expression="" defaultValue="after" alwaysStopAt="true" />
     <context>
       <option name="XML" value="true" />
     </context>
@@ -240,7 +285,12 @@
       <option name="Python_Class" value="true" />
     </context>
   </template>
-  <template name="odoo_xpath_attributes" value="&lt;xpath expr=&quot;//field[@name='']&quot; position=&quot;attributes&quot;&gt;&#10;    &lt;attribute name=&quot;required&quot;&gt;1&lt;/attribute&gt;&#10;    &lt;attribute name=&quot;readonly&quot;&gt;1&lt;/attribute&gt;&#10;&lt;/xpath&gt;" description="Add the structure of xpath with attributes" toReformat="true" toShortenFQNames="true">
+  <template name="odoo_xpath_attributes" value="&lt;xpath expr=&quot;//$ELEMENT$[@$ATTR_NAME$='$ATTR_VALUE$']&quot; position=&quot;attributes&quot;&gt;&#10;    &lt;attribute name=&quot;$ATTRIBUTE$&quot;&gt;$ATTRIBUTE_VALUE$&lt;/attribute&gt;&#10;    $END$&#10;&lt;/xpath&gt;" description="Add the structure of xpath with attributes" toReformat="true" toShortenFQNames="true">
+    <variable name="ELEMENT" expression="" defaultValue="field" alwaysStopAt="true" />
+    <variable name="ATTR_NAME" expression="" defaultValue="name" alwaysStopAt="true" />
+    <variable name="ATTR_VALUE" expression="" defaultValue="name" alwaysStopAt="true" />
+    <variable name="ATTRIBUTE" expression="" defaultValue="readonly" alwaysStopAt="true" />
+    <variable name="ATTRIBUTE_VALUE" expression="" defaultValue="1" alwaysStopAt="true" />
     <context>
       <option name="XML" value="true" />
     </context>
