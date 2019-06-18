@@ -358,4 +358,16 @@
       <option name="XML_TEXT" value="true" />
     </context>
   </template>
+  <template name="odoo_template_inherit" value="&lt;template id=&quot;$TEMPLATE_ID$&quot; inherit_id=&quot;$INHERIT_ID$&quot;&gt;&#10;    &lt;xpath expr=&quot;//$NODE$[$ATTRIBUTE_NAME$='$ATTRIBUTE_VALUE$']$FAMILY$&quot; position=&quot;$POSITION$&quot;&gt;&#10;        $END$&#10;    &lt;/xpath&gt;&#10;&lt;/template&gt;" description="Inherit a QWeb Template" toReformat="false" toShortenFQNames="true">
+    <variable name="TEMPLATE_ID" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="INHERIT_ID" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="NODE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="ATTRIBUTE_NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="ATTRIBUTE_VALUE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="FAMILY" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="POSITION" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="XML_TEXT" value="true" />
+    </context>
+  </template>
 </templateSet>
