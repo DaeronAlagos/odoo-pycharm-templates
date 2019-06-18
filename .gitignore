@@ -55,3 +55,4 @@ target/
 
 # mac OS folder attributes
 .DS_Store
+.idea
