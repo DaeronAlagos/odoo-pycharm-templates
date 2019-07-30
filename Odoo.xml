@@ -85,7 +85,10 @@
       <option name="XML" value="true" />
     </context>
   </template>
-  <template name="odoo_object" value="class NewModule(models.Model):&#10;    _name = 'new_module.new_module'&#10;    _rec_name = 'name'&#10;    _description = 'New Description'&#10;&#10;    name = fields.Char()&#10;" description="Create New Odoo Object" toReformat="false" toShortenFQNames="true">
+  <template name="odoo_object" value="class $CLASS_NAME$(models.$MODEL_TYPE$):&#10;    _name = '$MODEL_NAME$'&#10;&#10;    $END$" description="Create New Odoo Object" toReformat="false" toShortenFQNames="true">
+    <variable name="MODEL_NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="CLASS_NAME" expression="capitalize(camelCase(groovyScript(&quot;_1.tr('.', '_')&quot;, MODEL_NAME)))" defaultValue="" alwaysStopAt="false" />
+    <variable name="MODEL_TYPE" expression="" defaultValue="Model" alwaysStopAt="true" />
     <context>
       <option name="Python" value="true" />
     </context>
