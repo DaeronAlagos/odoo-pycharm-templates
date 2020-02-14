@@ -373,4 +373,25 @@
       <option name="XML_TEXT" value="true" />
     </context>
   </template>
+  <template name="odoo_demo_partner" value="&lt;record id=&quot;$PARTNER_RECORD_ID$&quot; model=&quot;res.partner&quot;&gt;&#10;    &lt;field name=&quot;name&quot;&gt;$PARTNER_NAME$&lt;/field&gt;&#10;    &lt;!-- &lt;field eval=&quot;[(6, 0, [ref('res_partner_category_14'), ref('res_partner_category_12')])]&quot; name=&quot;category_id&quot;/&gt; --&gt;&#10;    &lt;field name=&quot;is_company&quot;&gt;1&lt;/field&gt;&#10;    &lt;field name=&quot;street&quot;&gt;$STREET$&lt;/field&gt;&#10;    &lt;field name=&quot;city&quot;&gt;$CITY$&lt;/field&gt;&#10;    &lt;field name=&quot;state_id&quot; ref='state_uk105'/&gt;&#10;    &lt;field name=&quot;zip&quot;&gt;CV21 3DE&lt;/field&gt;&#10;    &lt;field name=&quot;country_id&quot; ref=&quot;base.gb&quot;/&gt;&#10;    &lt;field name=&quot;email&quot;&gt;$EMAIL$@example.com&lt;/field&gt;&#10;    &lt;field name=&quot;phone&quot;&gt;(+44) 1788 111111&lt;/field&gt;&#10;    &lt;field name=&quot;website&quot;&gt;http://www.$WEBSITE$.com&lt;/field&gt;&#10;    &lt;!-- &lt;field name=&quot;image_1920&quot; type=&quot;base64&quot; file=&quot;base/static/img/res_partner_1-image.png&quot;/&gt; --&gt;&#10;&lt;/record&gt;" description="Create a partner in demo data" toReformat="false" toShortenFQNames="true">
+    <variable name="PARTNER_RECORD_ID" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="PARTNER_NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="STREET" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="CITY" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="EMAIL" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="WEBSITE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="XML_TEXT" value="true" />
+    </context>
+  </template>
+  <template name="odoo_object_view" value="&lt;!-- $MODEL_STRING$ --&gt;&#10;&lt;record id=&quot;view_$MODEL_VIEW$_tree&quot; model=&quot;ir.ui.view&quot;&gt;&#10;    &lt;field name=&quot;name&quot;&gt;$MODEL_NAME$.tree&lt;/field&gt;&#10;    &lt;field name=&quot;model&quot;&gt;$MODEL_NAME$&lt;/field&gt;&#10;    &lt;field name=&quot;arch&quot; type=&quot;xml&quot;&gt;&#10;        &lt;tree default_order=&quot;create_date&quot; string=&quot;$MODEL_STRING$s&quot;&gt;&#10;            &lt;field name=&quot;$FIELD_1$&quot;/&gt;&#10;        &lt;/tree&gt;&#10;    &lt;/field&gt;&#10;&lt;/record&gt;&#10;&#10;&lt;record id=&quot;view_$MODEL_VIEW$_form&quot; model=&quot;ir.ui.view&quot;&gt;&#10;    &lt;field name=&quot;name&quot;&gt;view.$MODEL_NAME$.form&lt;/field&gt;&#10;    &lt;field name=&quot;model&quot;&gt;$MODEL_NAME$&lt;/field&gt;&#10;    &lt;field name=&quot;arch&quot; type=&quot;xml&quot;&gt;&#10;        &lt;form string=&quot;$MODEL_STRING$&quot;&gt;&#10;            &lt;sheet&gt;&#10;                &lt;group&gt;&#10;                    &lt;field name=&quot;$FIELD_1$&quot;/&gt;&#10;                &lt;/group&gt;&#10;            &lt;/sheet&gt;&#10;        &lt;/form&gt;&#10;    &lt;/field&gt;&#10;&lt;/record&gt;&#10;&#10;&lt;record model=&quot;ir.actions.act_window&quot; id=&quot;$MODEL_VIEW$s&quot;&gt;&#10;    &lt;field name=&quot;name&quot;&gt;$MODEL_STRING$&lt;/field&gt;&#10;    &lt;field name=&quot;view_id&quot; ref=&quot;view_$MODEL_VIEW$_tree&quot;/&gt;&#10;    &lt;field name=&quot;res_model&quot;&gt;$MODEL_NAME$&lt;/field&gt;&#10;    &lt;field name=&quot;target&quot;&gt;current&lt;/field&gt;&#10;    &lt;field name=&quot;view_mode&quot;&gt;tree,form&lt;/field&gt;&#10;&lt;/record&gt;&#10;&#10;&lt;menuitem id=&quot;menu_$MODEL_VIEW$&quot;&#10;          parent=&quot;$MENU_PARENT$&quot;&#10;          action=&quot;$MODEL_VIEW$s&quot;&#10;          name=&quot;$MODEL_STRING$&quot;/&gt;&#10;&lt;!-- /$MODEL_STRING$ --&gt;" description="Create menu items and views for new object" toReformat="false" toShortenFQNames="true">
+    <variable name="MODEL_NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="MODEL_STRING" expression="spaceSeparated(capitalize(camelCase(groovyScript(&quot;_1.tr('.', ' ')&quot;, MODEL_NAME))))" defaultValue="" alwaysStopAt="false" />
+    <variable name="MODEL_VIEW" expression="groovyScript(&quot;_1.tr('.', '_')&quot;, MODEL_NAME))" defaultValue="" alwaysStopAt="false" />
+    <variable name="FIELD_1" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="MENU_PARENT" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="XML_TEXT" value="true" />
+    </context>
+  </template>
 </templateSet>
