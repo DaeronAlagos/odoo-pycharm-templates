@@ -61,7 +61,11 @@
       <option name="XML" value="true" />
     </context>
   </template>
-  <template name="odoo_menuitem_categ" value="&lt;!-- This Menu Item Must have a parent --&gt;&#10;&lt;menuitem id=&quot;UNIQUE_ID_categ&quot; name=&quot;&quot; parent=&quot;&quot; sequence=&quot;&quot;/&gt;" description="Create New Menu Item for Categroization" toReformat="false" toShortenFQNames="true">
+  <template name="odoo_menuitem_categ" value="&lt;!-- This Menu Item Must have a parent --&gt;&#10;&lt;menuitem id=&quot;$ID$&quot; name=&quot;$NAME$&quot; &#10;          parent=&quot;$PARENT$&quot; sequence=&quot;$SEQUENCE$&quot;&#10;/&gt;" description="Create New Menu Item for Categroization" toReformat="false" toShortenFQNames="true">
+    <variable name="ID" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="PARENT" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="SEQUENCE" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="XML" value="true" />
     </context>
